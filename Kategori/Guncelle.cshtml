@@ -1,0 +1,24 @@
+﻿@model MVC_Eczane.Models.Entity.tbl_kategoriler
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_anaSayfa.cshtml";
+}
+
+@using (Html.BeginForm("VeriGuncelle", "Kategori", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.kategoriid)
+                    @Html.TextBoxFor(m=>m.kategoriid , new {@class="form-control"})
+                    
+                    <br />
+
+                    @Html.LabelFor(m=>m.kategoriad)
+                    @Html.TextBoxFor(m=>m.kategoriad , new {@class="form-control"})
+
+                </div>
+                
+                <div>
+                    <button class="btn btn-warning">GÜNCELLE</button>
+                </div>
+            }
+    

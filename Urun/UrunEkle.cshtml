@@ -1,0 +1,38 @@
+﻿@model MVC_Eczane.Models.Entity.tbl_urunler
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_anaSayfa.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" name="urunad" />
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Üretici</label>
+        <input type="text" class="form-control" name="urunuretici" />
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Ürün Kategorisi</label>
+        @Html.DropDownListFor(m => m.tbl_kategoriler.kategoriid, (List<SelectListItem>)ViewBag.degerler, new {@class="form-control"})
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Fiyat</label>
+        <input type="text" class="form-control" name="urunfiyat" />
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Adet</label>
+        <input type="text" class="form-control" name="urunadet" />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">KAYDET</button>
+    </div>
+
+</form>

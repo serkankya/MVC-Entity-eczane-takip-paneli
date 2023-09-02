@@ -1,0 +1,38 @@
+﻿@model MVC_Eczane.Models.Entity.tbl_musteriler
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_anaSayfa.cshtml";
+}
+
+@using (Html.BeginForm("VeriGuncelle", "Musteri", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.musteriid)
+                    @Html.TextBoxFor(m=>m.musteriid,new {@class="form-control"})
+
+                    <br />
+
+                    @Html.LabelFor(m=>m.musteriad)
+                    @Html.TextBoxFor(m=>m.musteriad,new {@class="form-control"})
+                    
+                    <br />
+
+                    @Html.LabelFor(m=>m.musterisoyad)
+                    @Html.TextBoxFor(m => m.musterisoyad, new {@class="form-control"})
+
+                    <br />
+
+                    @Html.LabelFor(m=>m.musteritckimlik)
+                    @Html.TextBoxFor(m => m.musteritckimlik, new {@class="form-control"})
+
+                    <br />
+
+                    @Html.LabelFor(m=>m.alinanurun)
+                    @Html.TextBoxFor(m => m.tbl_urunler.urunad, new {@class="form-control"})
+
+                </div>
+
+                <div>
+                    <button class="btn btn-warning">GÜNCELLE</button>
+                </div>
+            }

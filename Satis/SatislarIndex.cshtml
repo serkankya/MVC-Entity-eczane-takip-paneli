@@ -1,0 +1,32 @@
+﻿@using MVC_Eczane.Models.Entity
+@model List<tbl_satislar>
+    
+@{
+    ViewBag.Title = "SatislarIndex";
+    Layout = "~/Views/Shared/_anaSayfa.cshtml";
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>SATIŞ ID</th>
+        <th>ÜRÜN</th>
+        <th>MÜŞTERİ</th>
+        <th>ADET</th>
+        <th>FİYAT</th>
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.satisid</th>
+                <td>@item.urunid</td>
+                <td>@item.musteriid</td>
+                <td>@item.adet</td>
+                <td>@item.fiyat</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

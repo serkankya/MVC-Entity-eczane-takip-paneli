@@ -1,0 +1,31 @@
+﻿@model MVC_Eczane.Models.Entity.tbl_musteriler
+@{
+    ViewBag.Title = "MusteriEkle";
+    Layout = "~/Views/Shared/_anaSayfa.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ad</label>
+        <input type="text" class="form-control" name="musteriad" required="" maxlength="50" />
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Soyad</label>
+        <input type="text" class="form-control" name="musterisoyad"required="" maxlength="50"  />
+    </div>
+
+    <div style="margin-top:15px">
+        <label>TC Kimlik No</label>
+        <input type="text" class="form-control" name="musteritckimlik"required="" maxlength="11"  />
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Alınan Ürün</label>
+        @Html.DropDownListFor(m => m.tbl_urunler.urunid, (List<SelectListItem>)ViewBag.degerler, new { @class = "form-control" })   
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">EKLE</button>
+    </div>
+</form>

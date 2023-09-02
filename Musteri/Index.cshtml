@@ -1,0 +1,42 @@
+﻿@using MVC_Eczane.Models.Entity
+@model List<tbl_musteriler>
+    
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_anaSayfa.cshtml";
+}
+
+<a href="/Musteri/MusteriEkle" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>
+<p>
+
+</p>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>MÜŞTERİ ID</th>
+        <th>MÜŞTERİ AD</th>
+        <th>MÜŞTERİ SOYAD</th>
+        <th>MÜŞTERİ TC KİMLİK</th>
+        <th>ALINAN ÜRÜN</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.musteriid</th>
+                <td>@item.musteriad</td>
+                <td>@item.musterisoyad</td>
+                <td>@item.musteritckimlik</td>
+                <td>@item.tbl_urunler.urunad</td>
+                <td><a href="/Musteri/Sil/@item.musteriid" class="btn btn-danger">SİL</a>
+                <td><a href="/Musteri/Guncelle/@item.musteriid" class="btn btn-info">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
